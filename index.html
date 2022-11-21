@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Merry Christmas</title>
+    <title>Happy 24th Birthday</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
@@ -114,6 +114,121 @@
     
   </figure> -->
 
+
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery(function($) {
+        var supportsAudio = !!document.createElement('audio').canPlayType;
+        if(supportsAudio) {
+                    var index = 0,
+                    // playing = false;
+                    // mediaPath = '/how_to/assets/media/audio/',
+                    // extension = '',
+                    tracks = [
+                        {"track":1,"file":"assessts/audio/I like you so much.mp4"},
+                        {"track":2,"file":"assessts/audio/Akin ka na.mp4"},
+                        {"track":3,"file":"assessts/audio/Buko.mp4"},
+                        {"track":4,"file":"assessts/audio/Ang tanging alay.mp4"},
+                        {"track":5,"file":"assessts/audio/Bulong.mp4"},
+                        {"track":6,"file":"assessts/audio/can't help falling inlove.mp4"},
+                        {"track":7,"file":"assessts/audio/Closer You and I.mp4"},
+                        {"track":8,"file":"assessts/audio/Gitara.mp4"},
+                        {"track":9,"file":"assessts/audio/you are my sunshine.mp4"},
+                        {"track":10,"file":"assessts/audio/Torete.mp4"},
+                        {"track":11,"file":"assessts/audio/Kahit di mo alam.mp4"},
+                        {"track":12,"file":"assessts/audio/Kisapmata.mp4"},
+                        {"track":13,"file":"assessts/audio/need you now.mp4"},
+                        {"track":14,"file":"assessts/audio/Hallelujah.mp4"},
+                        {"track":15,"file":"assessts/audio/perfect.mp4"},
+                        {"track":16,"file":"assessts/audio/Porque.mp4"},
+                        {"track":17,"file":"assessts/audio/you.mp4"},
+                        {"track":18,"file":"assessts/audio/Sana ngayong pasko.mp4"},
+                        {"track":19,"file":"assessts/audio/realize.mp4"},
+                        {"track":20,"file":"assessts/audio/Tagu-taguan.mp4"},
+                        {"track":21,"file":"assessts/audio/telephone.mp4"},
+                        {"track":22,"file":"assessts/audio/tagpuan.mp4"},
+                        {"track":23,"file":"assessts/audio/nobela.mp4"},
+                        {"track":24,"file":"assessts/audio/Royals.mp4"},
+                        
+                    ],
+                    trackCount = tracks.length,
+                    npAction = $('#npAction'),
+                    npTitle = $('#npTitle'),
+                    audio = $('#audio1').bind('play', function() {
+                        playing = true;
+                        npAction.text('Now Playing:');
+                    }).bind('pause', function() {
+                        playing = false;
+                        npAction.text('Paused:');
+                    }).bind('ended', function() {
+                        npAction.text('Paused:');
+                        if((index + 1) < trackCount) {
+                            index++;
+                            loadTrack(index);
+                            audio.play();
+                        } else {
+                            // audio.pause();
+                            index = 0;
+                            loadTrack(index);
+                        }
+                    }).get(0),
+                    btnPrev = $('#btnPrev').click(function() {
+                        if((index - 1) > -1) {
+                            index--;
+                            loadTrack(index);
+                            if(playing) {
+                                audio.play();
+                            }
+                        } else {
+                            // audio.pause();
+                            index = (tracks.length);
+                            loadTrack(index);
+                        }
+                    }),
+                    btnNext = $('#btnNext').click(function() {
+                        if((index + 1) < trackCount) {
+                            index++;
+                            loadTrack(index);
+                            if(playing) {
+                                audio.play();
+                            }
+                        } else {
+                            // audio.pause();
+                            index = 0;
+                            loadTrack(index);
+                        }
+                    }),
+                    li = $('#plUL li').click(function() {
+                        var id = parseInt($(this).index());
+                        if(id !== index) {
+                            playTrack(id);
+                        }
+                    }),
+                    loadTrack = function(id) {
+                        $('.plSel').removeClass('plSel');
+                        $('#plUL li:eq(' + id + ')').addClass('plSel');
+                        // npTitle.text(tracks[id].name);
+                        index = id;
+                        audio.src = tracks[id].file ;
+                    },
+                    playTrack = function(id) {
+                        loadTrack(id);
+                        audio.play();
+                    };
+                    // if(audio.canPlayType('audio/ogg')) {
+                    //     extension = '.ogg';
+                    // }
+                    // if(audio.canPlayType('audio/mpeg')) {
+                    //     extension = '.mp4';
+                    // }
+                    loadTrack(index);
+                }
+                });
+        </script>
+
+
   <div class="container">
   
     <!-- header  -->
@@ -123,13 +238,13 @@
 
         <!-- <div></div> -->
         <center>
-          <img src="assessts\images\santa-hat.png" style="width: 10rem; padding-top: 2rem; margin-right: 9rem;">
+          <!-- <img src="assessts\images\santa-hat.png" style="width: 10rem; padding-top: 2rem; margin-right: 9rem;"> -->
         <h1>
-          Merry Christmas
+          Happy Birthday
         </h1>
-          <img src="assessts\images\xmas-lights.png">
+        <!-- <img src="assessts\images\xmas-lights.png"> -->
         <fieldset>
-             <img src="assessts\images\xmas01.jpg">
+             <img src="assessts\images\22Nov.jpg">
         </fieldset>
         </center>
         
@@ -185,10 +300,26 @@
         </div>
       
         <center>
-          <video controls="" autoplay="" name="media"><source src="assessts\audio\Sana ngayong pasko.mp4" type="audio/mp4"></video>
+          <!-- <video controls="" autoplay="" name="media"><source src="assessts\audio\I like you so much.mp4" type="audio/mp4"></video> -->
+          <div id="cwrap">
+            <div id="nowPlay">
+                <h3 id="npAction">Paused:</h3>
+                <div id="npTitle"></div>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio id="audio1" controls="controls" width="300">
+                        Your browser does not support the HTML5 Audio Tag.
+                    </audio>
+                </div>
+                <div id="extraControls">
+                    <button id="btnPrev" class="ctrlbtn">|&lt;&lt; Prev Track</button> <button id="btnNext" class="ctrlbtn">Next Track &gt;&gt;|</button>
+                </div>
+            </div>
+            
         </center>
         
-         <img src="assessts\images\xmas-lights.png">
+         <!-- <img src="assessts\images\xmas-lights.png"> -->
           <div class="description"><br>
                <!-- Happy Birthday sayo! matanda kana.<br>
                Mag-iingat palagi diyan...<br>
@@ -200,16 +331,16 @@
                This is your day naman kaya okay lang
                kahit ilang greetings pa ahahahaha -->
 
-                Merry Christmas<br>
+                <!-- Merry Christmas<br>
                 sa inyo diyan!..<br>
                 Kamusta naman diyan?<br>
-                May handa ba kayo?<br>
+                May handa ba kayo?<br> -->
 
           </div>
 
           <center>
             <fieldset>
-                 <img src="assessts\images\xmas02.jpg">
+                 <!-- <img src="assessts\images\xmas02.jpg"> -->
             </fieldset>
             </center>
 
@@ -221,10 +352,10 @@
               You have one of the most beautiful smile I've seen.<br>
               So don't you ever dare <br>lose it -->
 
-              Basta enjoy lang sa pasko...<br>
+              <!-- Basta enjoy lang sa pasko...<br>
               wag masiyado <br> mag-paStress &#128540 <br>
               Yung mga inaanak mo ba? <br>
-              May regalo kana? hahaha &#128518 <br>
+              May regalo kana? hahaha &#128518 <br> -->
          </div>
           
           <!-- <fieldset " > -->
@@ -252,10 +383,10 @@
 
   <div class="description"><br>
     <!-- Joke lang ahahaha... -->
-    pasensya na nga pala <br>
+    <!-- pasensya na nga pala <br>
     hindi ko padin tapos <br>
     ayusin to &#128517 <br>
-    medyo naging busy ee <br>
+    medyo naging busy ee <br> -->
 </div>
 
 <fieldset style="padding: 1rem;">
@@ -285,7 +416,7 @@
   Kahit na hindi kana lumaki mula nung Baby ka...<br>
   Joke lang ahahaha -->
 
-  Mag-iingat kayo <br>
+  <!-- Mag-iingat kayo <br>
   palagi diyan! <br>
   at Maligayang Pasko uli! <br>
   sana Enjoy ang Pasko <br>
@@ -296,7 +427,7 @@
 
   Eto yung Gift ko sayo! <br>
   Nasaan gift mo sakin? <br>
-  Joke lang &#128523 <br>
+  Joke lang &#128523 <br> -->
 
 </div>
 
