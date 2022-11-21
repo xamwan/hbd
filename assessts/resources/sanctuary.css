@@ -2,8 +2,8 @@
 
 
 :root{
-    --whitesmoke: #1DAD68;
-    --woodlife: #E0004D;
+    --whitesmoke: #000000;
+    --woodlife: #C5B358;
     --grasslife: whitesmoke;
     --fire: whitesmoke;
     --trans: all 0.5s ease-in-out;
